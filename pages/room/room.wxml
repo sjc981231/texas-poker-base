@@ -1,0 +1,44 @@
+<view class="container" wx:if="{{room}}">
+  <view class="card">
+    <view>房间：{{room.roomId}}</view>
+    <view>房主：{{hostName}}</view>
+    <view>人数：{{room.players.length}} / 10</view>
+    <button wx:if="{{isHost && room.status === 'waiting'}}" class="btn" type="primary" bindtap="startGame">房主开始游戏</button>
+  </view>
+
+  <view class="card">
+    <view>玩家列表</view>
+    <view wx:for="{{room.players}}" wx:key="id">
+      {{item.name}} - 筹码 {{item.chips}}
+    </view>
+  </view>
+
+  <view class="card" wx:if="{{room.game}}">
+    <view>阶段：{{room.game.street}}</view>
+    <view>底池：{{room.game.pot}}</view>
+    <view>公共牌：
+      <text wx:for="{{boardLabels}}" wx:key="*this">{{item}} </text>
+    </view>
+    <view>当前行动：{{turnName}}</view>
+  </view>
+
+  <view class="card" wx:if="{{myHandLabels.length}}">
+    <view>我的手牌：{{myHandLabels[0]}} {{myHandLabels[1]}}</view>
+  </view>
+
+  <view class="card" wx:if="{{canAct}}">
+    <button class="btn" bindtap="actCheck">过牌</button>
+    <button class="btn" bindtap="actCall">跟注</button>
+    <button class="btn" bindtap="actFold">弃牌</button>
+    <button class="btn" bindtap="actAllin">全下</button>
+    <view class="row">
+      <input placeholder="加注到" type="number" bindinput="onRaiseInput" model:value="{{raiseTo}}" />
+      <button class="btn" bindtap="actRaise">加注</button>
+    </view>
+  </view>
+
+  <view class="card" wx:if="{{logs.length}}">
+    <view>操作日志</view>
+    <view wx:for="{{logs}}" wx:key="*this">{{item}}</view>
+  </view>
+</view>
