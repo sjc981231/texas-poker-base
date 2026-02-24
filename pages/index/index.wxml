@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="card">
+    <text>微信德州扑克（2-10人）</text>
+    <view>初始筹码：200，小盲：1，大盲：2</view>
+    <button class="btn" type="primary" bindtap="createRoom">创建房间（房主）</button>
+  </view>
+
+  <view class="card">
+    <input placeholder="输入房间ID" model:value="{{roomIdInput}}" bindinput="onRoomInput" />
+    <button class="btn" bindtap="joinRoom">加入房间</button>
+  </view>
+
+  <view class="card" wx:if="{{currentRoomId}}">
+    <view>当前房间：{{currentRoomId}}</view>
+    <button class="btn" open-type="share" bindtap="prepareShare">邀请微信好友</button>
+    <button class="btn" bindtap="gotoRoom">进入房间</button>
+  </view>
+</view>

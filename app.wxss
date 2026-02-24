@@ -1,0 +1,21 @@
+page {
+  background: #0f3d13;
+  color: #fff;
+  min-height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+}
+
+.container {
+  padding: 24rpx;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.btn {
+  margin-top: 14rpx;
+}

@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/room/room"
+  ],
+  "window": {
+    "navigationBarTitleText": "德州扑克",
+    "navigationBarBackgroundColor": "#1b5e20",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#0f3d13"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
